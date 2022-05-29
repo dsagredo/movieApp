@@ -1,1 +1,17 @@
-<p>navbar works!</p>
+<mat-toolbar color="gris">
+  <span class="icon-imdb"
+    ><span class="path1"></span><span class="path2"></span
+  ></span>
+  <span class="md-spacer"></span>
+  <div fxShow="true" fxHide.lt-md="true">
+    <button mat-button routerLinkActive="active" routerLink="home">Home</button>
+    <button mat-button routerLinkActive="active" routerLink="search">
+      Search
+    </button>
+    <mat-form-field appearance="fill" class="md-search">
+      <input matInput />
+      <mat-icon>search</mat-icon>
+    </mat-form-field>
+    <button mat-stroked-button>Buscador</button>
+  </div>
+</mat-toolbar>

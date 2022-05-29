@@ -1,0 +1,22 @@
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: initial;
+}
+.md-spacer {
+  flex: 1 1 auto;
+}
+.md-search {
+  margin: 0 1.5rem;
+}
+.mat-drawer-container,
+.mat-drawer-content {
+  display: block;
+  height: 100%;
+}
+main {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.active {
+  background-color: yellow;
+}

@@ -1,0 +1,19 @@
+.md-card-container {
+  width: 1140px;
+  max-width: 100%;
+  padding-left: 15px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+}
+.md-card-content {
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+.md-card {
+  width: 19.3%;
+  margin: 1rem;
+}
