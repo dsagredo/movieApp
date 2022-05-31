@@ -20,9 +20,15 @@ export class HomeComponent implements OnInit {
 
   onChangeText(value: string) {
     if (value) {
-      this.movieSvc
-        .findByTitle(value)
-        .subscribe(({ results }: any) => (this.movieList = results));
+      this.movieSvc.findByTitle(value).subscribe(({ results }: any) => {
+        let arrayMovies = [];
+        for (let i = 0; i < results.length; i++) {
+          if (results[i].poster_path && results[i].overview) {
+            arrayMovies.push(results[i]);
+          }
+        }
+        this.movieList = arrayMovies;
+      });
     }
   }
 }
