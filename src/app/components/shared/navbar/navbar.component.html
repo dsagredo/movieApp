@@ -5,13 +5,10 @@
   <span class="md-spacer"></span>
   <div fxShow="true" fxHide.lt-md="true">
     <button mat-button routerLinkActive="active" routerLink="home">Home</button>
-    <button mat-button routerLinkActive="active" routerLink="search">
-      Search
-    </button>
     <mat-form-field appearance="fill" class="md-search">
-      <input matInput />
+      <input matInput type="text" [formControl]="inputSearch" />
       <mat-icon>search</mat-icon>
     </mat-form-field>
-    <button mat-stroked-button>Buscador</button>
+    <button mat-stroked-button (click)="onSearch()">Buscador</button>
   </div>
 </mat-toolbar>

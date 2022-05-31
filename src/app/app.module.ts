@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MoviesComponent } from './components/movies/movie.component';
 import { HomeComponent } from './components/home/home.component';
-import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Angular Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -20,15 +20,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 // Service
 import { HttpClientModule } from '@angular/common/http';
-//import { MovieSerivce } from './services/movie.service';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SearchComponent, NavbarComponent],
+  declarations: [AppComponent, NavbarComponent, MoviesComponent, HomeComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
     MatFormFieldModule,
@@ -37,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatSidenavModule,
     MatGridListModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
