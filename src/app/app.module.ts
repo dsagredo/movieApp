@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './components/movies/movie.component';
 import { HomeComponent } from './components/home/home.component';
+import { NewsComponent } from './components/news/news.component';
+
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -23,7 +25,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, MoviesComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    MoviesComponent,
+    HomeComponent,
+    NewsComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
