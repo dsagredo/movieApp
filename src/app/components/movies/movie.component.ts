@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
@@ -7,6 +8,11 @@ import { Component, Input } from '@angular/core';
 })
 export class MoviesComponent {
   @Input() movieList!: any[];
+  @Input() message!: string;
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  onDetailID(idDetail: number) {
+    this.router.navigate(['/detail', idDetail]);
+  }
 }

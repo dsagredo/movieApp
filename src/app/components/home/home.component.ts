@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { MovieSerivce } from 'src/app/services/movie.service';
 
 @Component({
@@ -9,26 +8,39 @@ import { MovieSerivce } from 'src/app/services/movie.service';
 })
 export class HomeComponent implements OnInit {
   movieList!: any[];
-  interact = { loading: false, error: false };
-  constructor(private movieSvc: MovieSerivce) {}
+  loading: boolean;
+  message!: string;
+  constructor(private movieSvc: MovieSerivce) {
+    this.loading = true;
+  }
 
   ngOnInit(): void {
     this.movieSvc
       .getAllMovie()
-      .subscribe(({ results }: any) => (this.movieList = results));
+      .subscribe(({ results }: any) => this.detalleMovie(results));
+  }
+
+  detalleMovie(data: any) {
+    let arrayMovies: any[] = [];
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].poster_path && data[i].overview && data[i].title) {
+        arrayMovies.push(data[i]);
+      } else {
+        this.message = 'No hay datos';
+      }
+    }
+    setTimeout(() => {
+      this.loading = false;
+      this.movieList = arrayMovies;
+    }, 2500);
   }
 
   onChangeText(value: string) {
     if (value) {
-      this.movieSvc.findByTitle(value).subscribe(({ results }: any) => {
-        let arrayMovies = [];
-        for (let i = 0; i < results.length; i++) {
-          if (results[i].poster_path && results[i].overview) {
-            arrayMovies.push(results[i]);
-          }
-        }
-        this.movieList = arrayMovies;
-      });
+      this.loading = true;
+      this.movieSvc
+        .findByTitle(value)
+        .subscribe(({ results }: any) => this.detalleMovie(results));
     }
   }
 }

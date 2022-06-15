@@ -1,0 +1,11 @@
+.md-card-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.mat-spinner::ng-deep circle {
+  stroke: rgb(245, 197, 24);
+}

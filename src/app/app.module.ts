@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './components/movies/movie.component';
 import { HomeComponent } from './components/home/home.component';
-import { NewsComponent } from './components/news/news.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,9 +20,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 // Service
 import { HttpClientModule } from '@angular/common/http';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     MoviesComponent,
     HomeComponent,
-    NewsComponent,
+    DetailComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatSidenavModule,
     MatGridListModule,
+    MatProgressSpinnerModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

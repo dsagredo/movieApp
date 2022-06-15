@@ -1,0 +1,15 @@
+.md-card-container {
+  width: 1140px;
+  max-width: 100%;
+  padding-left: 15px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+}
+.md-card-mt {
+  margin-top: 3rem;
+}
+a.md-black {
+  color: #000000 !important;
+}

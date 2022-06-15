@@ -19,4 +19,10 @@ export class MovieSerivce {
       `${environment.apiMovie}discover/movie?api_key=266e96d82000d37c7b97a3a18202dadd&language=es`
     );
   }
+
+  getMovieId(id: number) {
+    return this.http.get(
+      `${environment.apiMovie}movie/${id}?api_key=266e96d82000d37c7b97a3a18202dadd&language=es`
+    );
+  }
 }

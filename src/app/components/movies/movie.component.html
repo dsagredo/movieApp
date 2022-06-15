@@ -1,9 +1,12 @@
-<div class="md-card-container">
+<div
+  *ngIf="movieList && movieList.length > 0; else noMessage"
+  class="md-card-container"
+>
   <h2>Destacado</h2>
   <div class="md-card-content">
     <mat-card class="md-card" *ngFor="let movie of movieList">
       <mat-card-header>
-        <mat-card-title>{{ movie.title }}</mat-card-title>
+        <mat-card-title class="md-text">{{ movie.title }}</mat-card-title>
       </mat-card-header>
       <img
         mat-card-image
@@ -11,13 +14,16 @@
         [alt]="movie.title"
       />
       <mat-card-content>
-        <p>
+        <p class="md-text-description">
           {{ movie.overview }}
         </p>
       </mat-card-content>
       <mat-card-actions align="end">
-        <button mat-button>Ver más...</button>
+        <button mat-button (click)="onDetailID(movie.id)">Ver más...</button>
       </mat-card-actions>
     </mat-card>
   </div>
 </div>
+<ng-template #noMessage>
+  <p>{{ message }}</p>
+</ng-template>

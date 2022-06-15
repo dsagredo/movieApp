@@ -17,3 +17,17 @@
   width: 19.3%;
   margin: 1rem;
 }
+
+.md-text {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.md-text-description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
