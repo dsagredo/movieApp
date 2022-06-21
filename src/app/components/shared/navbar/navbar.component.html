@@ -7,10 +7,12 @@
     <button mat-button routerLinkActive="active" routerLink="/home">
       Inicio
     </button>
-    <mat-form-field appearance="fill" class="md-search">
-      <input matInput type="text" [formControl]="inputSearch" />
-      <mat-icon>search</mat-icon>
-    </mat-form-field>
-    <button mat-stroked-button (click)="onSearch()">Buscador</button>
+    <div class="md-search-box" *ngIf="!isActionComplete">
+      <mat-form-field appearance="fill" class="md-search">
+        <input matInput type="text" [formControl]="inputSearch" />
+        <mat-icon>search</mat-icon>
+      </mat-form-field>
+      <button mat-stroked-button (click)="onSearch()">Buscador</button>
+    </div>
   </div>
 </mat-toolbar>

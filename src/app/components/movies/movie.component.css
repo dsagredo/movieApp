@@ -31,3 +31,18 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+.md-container-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.md-message-error {
+  font-weight: bold;
+  color: red;
+  padding: 15px;
+  border: 1px solid;
+  background-color: rgb(255, 151, 151);
+}

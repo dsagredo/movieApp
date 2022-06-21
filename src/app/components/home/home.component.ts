@@ -17,10 +17,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.movieSvc
       .getAllMovie()
-      .subscribe(({ results }: any) => this.detalleMovie(results));
+      .subscribe(({ results }: any) => this.queryMovie(results));
   }
 
-  detalleMovie(data: any) {
+  queryMovie(data: any) {
     let arrayMovies: any[] = [];
     for (let i = 0; i < data.length; i++) {
       if (data[i].poster_path && data[i].overview && data[i].title) {
@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
       this.loading = true;
       this.movieSvc
         .findByTitle(value)
-        .subscribe(({ results }: any) => this.detalleMovie(results));
+        .subscribe(({ results }: any) => this.queryMovie(results));
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -8,11 +8,14 @@ import { FormControl } from '@angular/forms';
 })
 export class NavbarComponent implements OnInit {
   @Output() submitted = new EventEmitter<string>();
+  @Input() isActionComplete!: boolean;
   inputSearch = new FormControl('');
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isActionComplete;
+  }
 
   onSearch() {
     this.submitted.emit(this.inputSearch.value);

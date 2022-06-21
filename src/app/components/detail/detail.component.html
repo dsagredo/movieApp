@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [isActionComplete]="isActionComplete"></app-navbar>
 <div class="md-card-container">
   <div class="md-card-mt">
     <div fxLayout="row" fxLayoutGap="40px">
@@ -15,7 +15,7 @@
         <div>
           <p>{{ detail.overview }}</p>
         </div>
-        <div>
+        <div *ngIf="detail.homepage">
           <a class="md-black" target="_blank" href="{{ detail.homepage }}"
             ><mat-icon>language</mat-icon></a
           >

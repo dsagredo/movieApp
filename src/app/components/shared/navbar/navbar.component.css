@@ -20,3 +20,7 @@ main {
 .active {
   background-color: rgb(245, 197, 24);
 }
+
+.md-search-box {
+  display: inline;
+}
