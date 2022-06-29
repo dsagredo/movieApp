@@ -30,4 +30,5 @@ ng serve
 <img width="1728" alt="Captura de Pantalla 2022-06-21 a la(s) 16 46 01" src="https://user-images.githubusercontent.com/24228373/174895651-a9d61b26-8002-4f15-898a-88ae470f0484.png">
 </p>
 
-##Demo:## https://project-movieapp.netlify.app
+## Demo:  
+https://project-movieapp.netlify.app
